@@ -1,0 +1,13 @@
+.purple-highlight {
+  background-color: var(--purple-100);
+  color: var(--purple-300);
+  text-align: center;
+}
+
+.purple-highlight p {
+  font-family: var(--font-poppins);
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: normal;
+}

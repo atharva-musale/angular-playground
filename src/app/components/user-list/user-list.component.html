@@ -1,0 +1,16 @@
+@if ((users$ | async); as users) {
+  <div class="page-container">
+    <aside>
+      <ul class="user-list">
+        @for(user of users; track user.id) {
+          <li *showIf="!!(user)" class="user-item" (click)="goToUserPage(user)">
+            <p class="user-button">{{ user | fullname }}</p>
+          </li>
+        }
+      </ul>
+    </aside>
+    <div class="user-data-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+}

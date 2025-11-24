@@ -1,0 +1,23 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from '../../models';
+import { UserDataService } from '../../services';
+import { UserNamePipe } from '../../pipes';
+import { AsyncPipe, NgIf } from '@angular/common';
+
+@Component({
+  selector: 'app-user',
+  imports: [UserNamePipe, NgIf, AsyncPipe],
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.css',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class UserComponent {
+
+  public user$: Observable<User | null>;
+
+  constructor(private userService: UserDataService) {
+    this.user$ = this.userService.selectedUser$;
+  }
+}
