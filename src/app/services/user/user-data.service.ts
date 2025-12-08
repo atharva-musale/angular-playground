@@ -7,11 +7,21 @@ import { mockUsers, User } from '../../models';
 })
 export class UserDataService {
   private usersSubject$ = new BehaviorSubject(mockUsers);
+  /**
+   * Observable stream of users list
+   */
   public users$ = this.usersSubject$.asObservable();
 
+  /**
+   * Observable stream of current user count
+   */
   public currentUserCount$: Observable<number>;
 
   private selectedUserSubject$ = new BehaviorSubject<User | null>(null);
+
+  /**
+   * Observable stream of selected user
+   */
   public selectedUser$ = this.selectedUserSubject$.asObservable();
 
   constructor() {
@@ -20,8 +30,16 @@ export class UserDataService {
     );
   }
 
-  public setSelectedUser(user: User): void {
-    this.selectedUserSubject$.next(user);
+  /**
+   * Sets the selected user
+   *
+   * @param user user info
+   */
+  public setSelectedUser(user: User) {
+    const currentListOfUsers = this.usersSubject$.getValue();
+    if (currentListOfUsers.map(u => u.id).includes(user.id)) {
+      this.selectedUserSubject$.next(user);
+    }
   }
 
   /**

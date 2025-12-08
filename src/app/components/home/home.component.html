@@ -4,11 +4,11 @@
   <p [highlightText]>You can also use the following buttons to play around with the custom directive made which either hides or shows the section below based on the toggle value.</p>
 
   <div class="buttons-place">
-    <button data-test-id="showButton" (click)="primaryButtonClicked()" class="btn btn-orange">Show</button>
-    <button data-test-id="hideButton" (click)="secondaryButtonClicked()" class="btn hide btn-orange-outline">Hide</button>
+    <button (click)="showHighlightedSection()" class="btn btn-orange show-button">Show</button>
+    <button (click)="hideHighlightedSection()" class="btn hide btn-orange-outline hide-button">Hide</button>
   </div>
 </section>
 
-<section *showIf="!!(showHighlightedSection$ | async)" class="container purple-highlight" data-test-id="purple-highlight">
+<section *showIf="!!(showHighlightedSection$ | async)" class="container purple-highlight">
   <p>Click the buttons in the section above to show or hide respectively.</p>
 </section>

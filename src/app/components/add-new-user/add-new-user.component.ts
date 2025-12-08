@@ -11,7 +11,7 @@ import { UserDataService } from '../../services';
   styleUrl: './add-new-user.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddNewUserComponent implements FormValidator, OnInit {
+export class AddNewUserComponent implements FormValidator {
   /**
    * Form to be used in template
    */
@@ -37,27 +37,23 @@ export class AddNewUserComponent implements FormValidator, OnInit {
     });
   }
 
-  public ngOnInit() {
-    // this.userForm.valueChanges.subscribe(value => {
-    //   console.log('Form value changed:', value);
-    // });
-  }
-
+  /** Checks if a form control is invalid and touched */
   public checkIfInvalidAndTouched(controlName: string, fromAddress = false) {
     const control = fromAddress ? this.userForm.get('address')?.get(controlName) : this.userForm.get(controlName);
     return control?.invalid && control?.touched;
   }
 
-
+  /** Checks if the entire form is valid */
   public isValid(): boolean {
     return this.userForm.valid;
   }
 
+  /** Submits the form data */
   public submit() {
-    console.log(this.userForm);
     this.userService.addUser(this.userForm.value);
   }
 
+  /** Fills the form with mock data for testing */
   public fillMockData() {
     this.userForm.patchValue({
       firstname: 'Mark',

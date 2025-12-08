@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HighlightTextDirective, ShowIfDirective } from '../../directives';
 
@@ -18,13 +18,13 @@ export class HomeComponent {
   private toggleHighlightedSectionSubject$ = new BehaviorSubject(true);
   public showHighlightedSection$ = this.toggleHighlightedSectionSubject$.asObservable();
 
-  constructor() {}
-
-  public primaryButtonClicked() {
+  /** Shows the highlighted section */
+  public showHighlightedSection() {
     this.toggleHighlightedSectionSubject$.next(true);
   }
 
-  public secondaryButtonClicked() {
+  /** Hides the highlighted section */
+  public hideHighlightedSection() {
     this.toggleHighlightedSectionSubject$.next(false);
   }
 }

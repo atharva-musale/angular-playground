@@ -14,7 +14,7 @@ import { AsyncPipe, NgIf } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent {
-
+  /** Observable of the currently selected user */
   public user$: Observable<User | null>;
 
   constructor(private userService: UserDataService) {
