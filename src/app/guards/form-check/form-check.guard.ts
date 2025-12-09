@@ -7,12 +7,12 @@ import { Injectable } from "@angular/core";
 })
 export class FormCheckGuard implements CanDeactivate<FormValidator> {
   public canDeactivate(component: FormValidator): MaybeAsync<GuardResult> {
+    console.log(
+      component.isValid()
+      ? "Form is valid, navigation allowed."
+      : "Form is invalid, navigation blocked."
+    );
     // Only allow navigation if the form is valid
-    if (component.isValid()) {
-      console.log("Form is valid, navigation allowed.");
-    } else {
-      console.log("Form is invalid, navigation blocked.");
-    }
     return component.isValid();
   }
 }
