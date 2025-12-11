@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { By } from '@angular/platform-browser';
 import { firstValueFrom } from 'rxjs';
 
 import { UserListComponent } from './user-list.component';
@@ -10,6 +9,7 @@ import { ShowIfDirective } from '../../directives';
 import { UnserDataServiceFixtures } from '../../services/fixtures';
 import { mockUsers } from '../../models';
 import { clickElementByClass, getElementByClass, getNumberOfElementsByClass, getTextContentFromElementByClass } from '../../testing';
+import { vi } from 'vitest';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -29,7 +29,7 @@ describe('UserListComponent', () => {
       ]
     }).compileComponents();
 
-    spyOn(mockRouter, 'navigate').and.callThrough();
+    vi.spyOn(mockRouter, 'navigate');
 
     fixture = TestBed.createComponent(UserListComponent);
     component = fixture.componentInstance;

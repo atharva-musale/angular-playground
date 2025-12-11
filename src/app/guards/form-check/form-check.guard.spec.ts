@@ -40,14 +40,14 @@ describe('FormCheckGuard', () => {
     it('should return true when form is valid', () => {
       const result = guard.canDeactivate(mockComponent);
 
-      expect(result).toBeTrue();
+      expect(result).toBe(true);
     });
 
     it('should return false when form is invalid', () => {
       mockComponent.valid = false;
       const result = guard.canDeactivate(mockComponent);
 
-      expect(result).toBeFalse();
+      expect(result).toBe(false);
     });
   });
 });

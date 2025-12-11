@@ -27,15 +27,15 @@ describe('HomeComponent', () => {
     const hSec = getElementByClass(fixture, 'purple-highlight');
 
     expect(hSec).toBeTruthy();
-  })
+  });
 
   it('should hide highlight section when hide button is clicked', async () => {
     clickElementByClass(fixture, 'hide-button');
     fixture.detectChanges();
-    const show = await firstValueFrom(component.showHighlightedSection$)
+    const show = await firstValueFrom(component.showHighlightedSection$);
     const highlightSection = getElementByClass(fixture, 'purple-highlight');
 
-    expect(show).toBeFalse();
+    expect(show).toBe(false);
     expect(highlightSection).toBeFalsy();
   });
 
@@ -52,7 +52,7 @@ describe('HomeComponent', () => {
     const highlightSection = getElementByClass(fixture, 'purple-highlight');
     const show = await firstValueFrom(component.showHighlightedSection$);
 
-    expect(show).toBeTrue();
+    expect(show).toBe(true);
     expect(highlightSection).toBeTruthy();
   });
 });
