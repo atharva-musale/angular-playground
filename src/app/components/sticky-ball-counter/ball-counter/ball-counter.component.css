@@ -1,0 +1,15 @@
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-family: var(--font-playfair-display);
+  border-radius: 50%;
+  background: var(--blue-300);
+  width: 7rem;
+  height: 7rem;
+  color: var(--white);
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+}

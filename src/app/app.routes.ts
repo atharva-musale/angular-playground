@@ -14,11 +14,11 @@ export const routes: Routes = [
   },
   {
     path: 'users',
-    loadComponent: () => import('./components/user-list/user-list.component').then(m => m.UserListComponent),
+    loadComponent: () => import('./components/users/user-page/user-list.component').then(m => m.UserListComponent),
     children: [
       {
         path: ':id',
-        loadComponent: () => import('./components/user/user.component').then(m => m.UserComponent)
+        loadComponent: () => import('./components/users/user/user.component').then(m => m.UserComponent)
       }
     ]
   },
@@ -26,5 +26,11 @@ export const routes: Routes = [
     path: 'add-new-user',
     canDeactivate: [FormCheckGuard],
     loadComponent: () => import('./components/add-new-user/add-new-user.component').then(m => m.AddNewUserComponent)
+  },
+  {
+    path: 'sticky-ball-counter',
+    loadComponent: () => import(
+      './components/sticky-ball-counter/sticky-ball-counter-page/sticky-ball-counter-page.component'
+    ).then(m => m.StickyBallCounterPageComponent)
   }
 ];

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UserDataService } from '../../services';
 import { Observable } from 'rxjs';
-import { User } from '../../models';
 import { AsyncPipe } from '@angular/common';
-import { ShowIfDirective } from '../../directives';
-import { UserNamePipe } from '../../pipes';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { ShowIfDirective } from '../../../directives';
+import { User } from '../../../models';
+import { UserNamePipe } from '../../../pipes';
+import { UserDataService } from '../../../services';
 
 @Component({
   selector: 'app-user-list',

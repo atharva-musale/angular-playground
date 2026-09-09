@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 
 import { UserListComponent } from './user-list.component';
-import { UserDataService } from '../../services';
-import { UserNamePipe } from '../../pipes';
-import { ShowIfDirective } from '../../directives';
-import { UnserDataServiceFixtures } from '../../services/fixtures';
-import { mockUsers } from '../../models';
-import { clickElementByClass, getElementByClass, getNumberOfElementsByClass, getTextContentFromElementByClass } from '../../testing';
-import { vi } from 'vitest';
+import { clickElementByClass, getElementByClass, getNumberOfElementsByClass, getTextContentFromElementByClass } from '../../../testing';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { ShowIfDirective } from '../../../directives';
+import { mockUsers } from '../../../models';
+import { UserNamePipe } from '../../../pipes';
+import { UserDataService } from '../../../services';
+import { UnserDataServiceFixtures } from '../../../services/fixtures';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;

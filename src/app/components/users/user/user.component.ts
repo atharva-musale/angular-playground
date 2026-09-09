@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../../models';
-import { UserDataService } from '../../services';
-import { UserNamePipe } from '../../pipes';
 import { AsyncPipe } from '@angular/common';
+import { UserDataService } from '../../../services';
+import { User } from '../../../models';
+import { UserNamePipe } from '../../../pipes';
 
 @Component({
   selector: 'app-user',
