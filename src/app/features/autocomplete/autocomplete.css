@@ -1,0 +1,22 @@
+label {
+  font-family: var(--font-poppins);
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 30rem;
+}
+
+ul {
+  width: 30rem;
+  background-color: var(--gray-100);
+}
+
+li {
+  list-style: none;
+  background-color: var(--white);
+  padding: 0.3rem 0.5rem;
+  outline: 1px solid black;
+}

@@ -32,5 +32,9 @@ export const routes: Routes = [
     loadComponent: () => import(
       './features/sticky-ball-counter/sticky-ball-counter-page/sticky-ball-counter-page.component'
     ).then(m => m.StickyBallCounterPageComponent)
+  },
+  {
+    path: 'autocomplete',
+    loadComponent: () => import('./features/autocomplete/autocomplete').then(m => m.AutocompleteComponent)
   }
 ];

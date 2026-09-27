@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { interval, map, of, startWith } from 'rxjs';
 
 @Component({
@@ -7,6 +7,7 @@ import { interval, map, of, startWith } from 'rxjs';
   imports: [AsyncPipe],
   templateUrl: './ball-counter.component.html',
   styleUrl: './ball-counter.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BallCounterComponent {
   @Input()

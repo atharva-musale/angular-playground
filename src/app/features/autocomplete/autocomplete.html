@@ -1,0 +1,17 @@
+<section class="container">
+  <div class="search-input">
+    <label for="search">Search for cars: </label>
+    <input type="text" id="search" [formControl]="searchControl" (focus)="focused()" (blur)="blur()">
+  </div>
+  @let filteredCars = filteredCars$ | async;
+  @if (displayDropdown()) {
+    <ul class="filtered-list">
+      @for (car of filteredCars; track car.id) {
+        <li>
+          <span>{{ car.make }} </span>
+          <span>{{ car.model }}</span>
+        </li>
+      }
+    </ul>
+  }
+</section>
